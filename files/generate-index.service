@@ -1,0 +1,13 @@
+[Unit]
+Description=Generates the system index.html file
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=webgen
+Group=webgen
+ExecStart=/var/lib/webgen/bin/generate_index
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
